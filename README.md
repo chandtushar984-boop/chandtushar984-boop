@@ -1,12 +1,18 @@
-# 💫 About Me:
-Hi, myself Tushar<br><br>🔐 Exploring Cybersecurity, Web Security & Linux<br>💻 Building projects with Python, JavaScript , Express and Java<br>🌱 Currently learning Bug Bounty, Malware Analysis and Cloud Security<br>🚀 Open to collaborating on open-source and security projects<br><br>"Learn. Build. Break. Fix. Repeat."
+# 🐳 Using command line with docker (~2 min)
 
+## 0️ Prepare your machine
 
-# 💻 Tech Stack:
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
-# 📊 GitHub Stats:
-![](https://github-readme-stats.shion.dev/api?username=chandtushar984-boop&theme=dark&hide_border=false&include_all_commits=true&count_private=false)<br/>
-![](https://streak-stats.demolab.com/?user=chandtushar984-boop&theme=dark&hide_border=false)<br/>
-![](https://github-readme-stats.shion.dev/api/top-langs/?username=chandtushar984-boop&theme=dark&hide_border=false&include_all_commits=true&count_private=false&layout=compact)
+A machine with a recent version of [docker](https://www.docker.com/) is required.
 
-<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->
+## 1️ Run docker image
+
+The command to use is similar to the following:
+```shell
+docker run --rm --env INPUT_TOKEN=**** --env INPUT_USER=user --volume=/tmp:/renders ghcr.io/lowlighter/metrics:latest
+```
+
+To pass parameters, pass environment variable with the same name as the corresponding action option but in uppercase and prefixed with `INPUT_`.
+
+Generated files will be created in the mounted `/renders` directory.
+
+> 💡 When running *metrics* with docker, [`output_action`](/source/plugins/core/README.md#-configuring-output-action) will automatically default to `none` instead. To use a different output action, both `GITHUB_REPOSITORY` (notice the absence of `INPUT_` prefix) and `INPUT_COMMITTER_TOKEN` (with sufficient permissions) environment variables must be set.
